@@ -1,0 +1,77 @@
+{
+  "name": "@pixeldrew/build-info",
+  "version": "0.0.0-development",
+  "description": "Express middleware to add .build-info.json to an express app and route handler that outputs .build-info.json",
+  "type": "module",
+  "main": "middleware.js",
+  "private": false,
+  "scripts": {
+    "build": "babel middleware.js --out-file middleware.cjs",
+    "test": "echo \"no tests yet\" && exit 0",
+    "prepare": "npm run build && husky install"
+  },
+  "files": [
+    "./middleware.js",
+    "./middleware.cjs"
+  ],
+  "engines": {
+    "node": ">14.0.0"
+  },
+  "babel": {
+    "targets": {
+      "node": "14"
+    },
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs"
+        }
+      ]
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixeldrew/build-info.git"
+  },
+  "author": "Drew Foehn",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pixeldrew/build-info/issues"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "homepage": "https://github.com/pixeldrew/build-info#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.7",
+    "semantic-release": "^21.0.0"
+  },
+  "dependencies": {
+    "read-pkg-up": "^7.0.1"
+  }
+}
