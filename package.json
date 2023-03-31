@@ -6,7 +6,7 @@
   "main": "middleware.js",
   "private": false,
   "scripts": {
-    "build": "babel middleware.js --out-file middleware.cjs",
+    "build": "npx --no babel middleware.js --out-file middleware.cjs && npx --yes -p typescript tsc middleware.js --declaration --allowJs --emitDeclarationOnly --outDir ./",
     "test": "echo \"no tests yet\" && exit 0",
     "prepare": "npm run build && husky install"
   },
