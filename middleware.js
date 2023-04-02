@@ -8,7 +8,7 @@ const DEFAULT_FILENAME = ".build-info.json";
  * Middleware that reads the package.json from the application root then adds name, version and .build-info.json content to express app
  * @param {Object} options - options object
  * @param {string} options.filename - override default filename
- * @returns {Function} middleware that sets .build-info to app
+ * @returns {import("express").RequestHandler} middleware that sets .build-info to app
  */
 export function addBuildInfo({ filename = DEFAULT_FILENAME } = {}) {
   let name, version, info;
@@ -44,8 +44,8 @@ export function addBuildInfo({ filename = DEFAULT_FILENAME } = {}) {
 /**
  * Middleware helper that outputs build-info
  * @function
- * @param {Object} req express request object
- * @param {Object} res express response object
+ * @param {import("express").Request} req express request object
+ * @param {import("express").Response} res express response object
  * @return {undefined}
  */
 export function showBuildInfo(req, res) {

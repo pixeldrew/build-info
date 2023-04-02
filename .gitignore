@@ -3,3 +3,4 @@ node_modules
 .build-info.json
 *.cjs
 *.d.ts
+*.d.cts
