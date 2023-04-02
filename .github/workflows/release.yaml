@@ -23,7 +23,9 @@ jobs:
         with:
           cache: npm
           node-version: lts/*
-      - run: npm ci
+      - run: |
+          npm config set script-shell /usr/bin/bash
+          npm ci
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
