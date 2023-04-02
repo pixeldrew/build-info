@@ -1,8 +1,8 @@
-## Output build info
+## Build Info Middleware
 
 Express middleware helper to output .build-info.json contents via a request handler
 
-This is useful in CI environments to see what build has been deployed to an environment in the environment
+This is useful in CI environments if you're building every commit to see what build has been deployed to an environment
 
 ## Install:
 
@@ -22,10 +22,7 @@ Wrote build-info to /app/.build-info.json
 
 ```javascript
 import express from "express";
-import {
-  addBuildInfo,
-  showBuildInfo,
-} from "@pixeldrew/build-info";
+import { addBuildInfo, showBuildInfo } from "@pixeldrew/build-info";
 
 // or const { addBuildInfo, showBuildInfo} = require('@pixeldrew/build-info/middleware.cjs');
 
