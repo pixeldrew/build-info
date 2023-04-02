@@ -12,7 +12,8 @@
   },
   "files": [
     "./middleware.js",
-    "./middleware.cjs"
+    "./middleware.cjs",
+    "./middleware.d.*"
   ],
   "engines": {
     "node": ">14.0.0"
